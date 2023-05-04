@@ -12,8 +12,10 @@ class App extends Component {
   getRandomQuote = () => {
     // Get random quote from Web API
     this.setState({ message: "getting random quote..."});
+
     fetch ('https://triviahhh-api-gateway-rhn-engineering-dschenck-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/gateway/quotes') 
-    .then((response) => this.setState(response));
+    .then(r =>  r.json().then(data => ({status: r.status, body: data})))
+    .then(data => this.setState({message:data.body[1].quotation}))
   }
  
   render() {
