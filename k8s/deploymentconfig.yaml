@@ -1,0 +1,32 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: triviahhh-web
+  labels:
+    app: triviahhh-web
+spec:
+  selector:
+    app: triviahhh-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: triviahhh-web
+    spec:
+      containers:
+        - name: triviahhh-web
+          image: image-registry.openshift-image-registry.svc:5000/pipelines-tutorial/triviahhh-web:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+  triggers:
+  - type: ConfigChange 
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - triviahhh-web
+      from:
+        kind: ImageStreamTag
+        name: triviahhh-web:latest
+    type: ImageChange

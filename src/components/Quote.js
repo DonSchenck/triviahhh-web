@@ -6,7 +6,7 @@ import "./Quote.css"
 function Quote(props) {
     const [data, setData] = useState();
     const fetchRandomQuote = () => {
-        fetch(`https://triviahhh-api-gateway-rhn-engineering-dschenck-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/gateway/quotes/random`)
+        fetch(`https://triviahhh-api-gateway-rhn-engineering-dsch-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/gateway/quotes/random`)
             .then((response) => response.json())
             .then((actualData) => {
                 setData(actualData);
