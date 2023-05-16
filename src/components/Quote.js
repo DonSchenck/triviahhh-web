@@ -36,7 +36,7 @@ function Quote(props) {
                             <tr key={data.quoteID}>
                                 <td>{data.quoteID}</td>
                                 <td>{data.author}</td>
-                                <td>{data.quotation}</td>
+                                <td className="quote">{data.quotation}</td>
                             </tr>
                         }
                     </tbody>
