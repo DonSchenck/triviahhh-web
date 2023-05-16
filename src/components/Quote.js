@@ -22,7 +22,7 @@ function Quote(props) {
  */
     return (
         <>
-            <div className="Quote">
+            <div className="quote">
                 <button onClick={fetchRandomQuote}>Get Random Quote</button>
                 {
                     <tbody>
