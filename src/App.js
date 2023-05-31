@@ -9,7 +9,7 @@ function App() {
   const [data, setData] = useState([]);
 
   const fetchAllQuotes = () => {
-    fetch(`https://triviahhh-api-gateway-rhn-engineering-dsch-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/gateway/quotes`)
+    fetch(`https://triviahhh-api-gateway-triviahhh-quote.apps.rosa-c7cbg.5g6a.p1.openshiftapps.com/gateway/quotes`)
       .then((response) => response.json())
       .then((actualData) => {
         console.log(actualData);
